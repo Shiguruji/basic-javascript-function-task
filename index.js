@@ -6,13 +6,14 @@ function convertFahrToCelsius (temp) {
     const checkTempY = parseInt(temp);
     const error1 = JSON.stringify(temp) + " is not a valid number but a/an array.";
     const error2 = JSON.stringify(temp) + " is not a valid number but a/an "+ typeof temp + ".";
+    const finalResult = Number(result.toFixed(4));
 
     if (typeof temp === "number") {
-        console.log(Number(result.toFixed(4)));
-        return Number(result.toFixed(4));
+        console.log(finalResult);
+        return finalResult;
     } else if (typeof temp === "string" && (isNaN(checkTempX) === false || isNaN(checkTempY) === false)) {
-        console.log(Number(result.toFixed(4)));
-        return Number(result.toFixed(4));
+        console.log(finalResult);
+        return finalResult;
     } else if (Array.isArray(temp)) {
         console.log(error1);
         return error1;
