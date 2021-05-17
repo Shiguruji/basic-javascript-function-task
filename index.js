@@ -3,7 +3,10 @@
 function convertFahrToCelsius (temp) {
     const result = ((temp - 32) * (5 / 9));
     const checkTempX = parseFloat(temp);
-    const checkTempY = parseInt(temp, 10);
+    const checkTempY = parseInt(temp);
+    const error1 = JSON.stringify(temp) + " is not a valid number but a/an array.";
+    const error2 = JSON.stringify(temp) + " is not a valid number but a/an "+ typeof temp + ".";
+
     if (typeof temp === "number") {
         console.log(Number(result.toFixed(4)));
         return Number(result.toFixed(4));
@@ -11,13 +14,15 @@ function convertFahrToCelsius (temp) {
         console.log(Number(result.toFixed(4)));
         return Number(result.toFixed(4));
     } else if (Array.isArray(temp)) {
-        console.log(JSON.stringify(temp) + " is not a valid number but a/an array.")
+        console.log(error1);
+        return error1;
     } else {
-        console.log(JSON.stringify(temp) + " is not a valid number but a/an "+ typeof temp + ".");
+        console.log(error2);
+        return error2;
     }
 }
 
-//  convertFahrToCelsius();
+//  convertFahrToCelsius(32);
 
 
 function checkYuGiOh (n) {
@@ -43,6 +48,7 @@ function checkYuGiOh (n) {
 
     const checkNX = parseFloat(n);
     const checkNY = parseInt(n, 10);
+    const error = "invalid parameter: " + JSON.stringify(n);
 
     function checkType (n){
         if (typeof n === "number"){
@@ -60,7 +66,8 @@ function checkYuGiOh (n) {
         console.log(arr2);
         return arr2;
     } else {
-        console.log("invalid parameter: " + JSON.stringify(n));
+        console.log(error);
+        return error;
     }
 }
 
