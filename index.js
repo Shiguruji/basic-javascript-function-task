@@ -6,14 +6,15 @@ function convertFahrToCelsius (temp) {
     const checkTempY = parseInt(temp, 10);
     if (typeof temp === "number") {
         console.log(Number(result.toFixed(4)));
+        return Number(result.toFixed(4));
     } else if (typeof temp === "string" && (isNaN(checkTempX) === false || isNaN(checkTempY) === false)) {
         console.log(Number(result.toFixed(4)));
+        return Number(result.toFixed(4));
     } else if (Array.isArray(temp)) {
         console.log(JSON.stringify(temp) + " is not a valid number but a/an array.")
     } else {
         console.log(JSON.stringify(temp) + " is not a valid number but a/an "+ typeof temp + ".");
     }
-    return Number(result.toFixed(4));
 }
 
 //  convertFahrToCelsius();
@@ -63,4 +64,4 @@ function checkYuGiOh (n) {
     }
 }
 
-// checkYuGiOh(50);
+// checkYuGiOh(100);
