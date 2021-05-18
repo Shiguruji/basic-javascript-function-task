@@ -6,6 +6,7 @@ function convertFahrToCelsius (temp) {
     const checkTempY = parseInt(temp);
     const error1 = JSON.stringify(temp) + " is not a valid number but a/an array.";
     const error2 = JSON.stringify(temp) + " is not a valid number but a/an "+ typeof temp + ".";
+    const error3 = JSON.stringify(temp) + " is not a valid number but a/an null.";
     const finalResult = Number(result.toFixed(4));
 
     if (typeof temp === "number") {
@@ -17,6 +18,9 @@ function convertFahrToCelsius (temp) {
     } else if (Array.isArray(temp)) {
         console.log(error1);
         return error1;
+    } else if (temp === null) {
+        console.log(error3);
+        return error3;
     } else {
         console.log(error2);
         return error2;
